@@ -1270,7 +1270,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton(text="⾕", callback_data="start"),
                     InlineKeyboardButton(text="♡", url=GRP_LNK),
                     InlineKeyboardButton(text="𖤍", callback_data="about"),
-                    InlineKeyboardButton(text="$", callback_data="earn"),
+                    InlineKeyboardButton(text="$", callback_data="topsearch"),
                     InlineKeyboardButton(text="☰", url=CHNL_LNK),
                 ],[
                     InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
@@ -1284,14 +1284,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_photo(
-            photo=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML,
-            reply_to_message_id=message.id
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
         )
-        return
+        await query.message.edit_text(
+            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
   
     elif query.data == "give_trial":
         try:
@@ -1503,7 +1505,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "source":
         buttons = [[
-            InlineKeyboardButton('ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ 📜', url='https://github.com/NBBotz/Auto_Filter_Bot.git'),
+            InlineKeyboardButton('ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ 📜', url='https://t.me/MoviePalaceSupport'),
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='bot')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
