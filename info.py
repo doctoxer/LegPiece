@@ -30,7 +30,7 @@ SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://telegra.ph/file/f983d857f3c
 FSUB_IMG = (environ.get('FSUB_IMG', 'https://i.ibb.co/cShkPjcZ/x.jpg')).split() 
 
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '7983671882 1368186248 6456879892').split()]  #Admin Id
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002595419106').split()] #Movie Database Channel Id
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002334615923').split()] #Movie Database Channel Id
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002144072367'))  #Log Channel Id
 BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-1002144072367'))  #Streming Log Channel Id
 MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1001851946603'))  #Movie Update Channel Id
