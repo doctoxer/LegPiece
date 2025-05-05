@@ -1279,7 +1279,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],[
                     InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('• Tᴏᴘ •', callback_data="topsearch")),
+                    InlineKeyboardButton('• ᴛᴏᴘ •', callback_data="topsearch"),
                     InlineKeyboardButton('$ Eᴀʀɴ Mᴏɴᴇʏ', callback_data="earn")
                 ],[
                     InlineKeyboardButton('〄 Hᴇʟᴘ', callback_data='features'),
