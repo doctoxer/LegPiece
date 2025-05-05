@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Lucia/Bot/photo_2025-04-30_00-49-18.jpg">
+  <img src="MoviePalace/Bot/photo_2025-04-30_00-49-18.jpg">
 </p>
 
 <h1 align="center">Movie Palace Bot</h1>
