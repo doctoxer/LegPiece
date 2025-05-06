@@ -7,7 +7,7 @@ import random
 import asyncio
 import time
 import pytz
-from plugins.pm_filter import auto_filter 
+from .pm_filter import auto_filter 
 from Script import script
 from datetime import datetime
 from database.refer import referdb
@@ -1444,4 +1444,3 @@ async def admin_commands(client, message):
     user = message.from_user.mention
     user_id = message.from_user.id
     await message.reply_text(script.ADMIN_CMD, disable_web_page_preview=True)
-    
