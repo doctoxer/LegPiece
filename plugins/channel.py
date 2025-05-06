@@ -60,7 +60,7 @@ async def send_movie_update(bot, file_name, caption):
         unique_id = generate_unique_id(search_movie)
         reaction_counts[unique_id] = {"❤️": 0, "👍": 0, "👎": 0, "🔥": 0}
         user_reactions[unique_id] = {}
-        caption_template = "<b>#Added ✅\n\nName: {}\nQuality: {}\nAudio: {}</b>"
+        caption_template = "<b><i>#𝚄𝙿𝙻𝙾𝙰𝙳𝙴𝙳</i> ✅\n\nName: {}\nAudio: {}</b>"
         full_caption = caption_template.format(file_name, quality, language)
         if kind:
             full_caption += f"\n<b>#{kind}</b>"
