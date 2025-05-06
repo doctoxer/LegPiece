@@ -22,7 +22,7 @@ BOT_TOKEN = environ.get('BOT_TOKEN', "")
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
-PICS = (environ.get('PICS', 'https://ibb.co/chvj3FYs')).split() 
+PICS = (environ.get('PICS', 'https://ibb.co/chvj3FYs https://ibb.co/yB7fkJFj https://ibb.co/yFT9ztsD https://ibb.co/DfXsL3Z7 https://ibb.co/Fbp8KVJv https://ibb.co/C3cMcnZ9 https://ibb.co/gZz60vFT https://ibb.co/Y4Hcy18C https://ibb.co/CKHWWq7B https://ibb.co/Vc18HRLp https://ibb.co/JRncWbSB https://ibb.co/7NxQkLVj https://ibb.co/NnScDWBp https://ibb.co/b5197Kv5 https://ibb.co/Pv8wLPq6 https://ibb.co/KcGPdWqK https://ibb.co/q3sz31wd')).split() 
 NOR_IMG = environ.get("NOR_IMG", "https://graph.org/file/62efbcc4e7580b76530ba.jpg")
 MELCOW_VID = environ.get("MELCOW_VID", "https://telegra.ph/file/4073ba3f8086757c0ac29.mp4")
 SPELL_IMG = environ.get("SPELL_IMG", "https://telegra.ph/file/3dacdcead375a33fc0697.jpg")
