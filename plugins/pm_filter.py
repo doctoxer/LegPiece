@@ -1267,21 +1267,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":
         buttons = [[
-                    InlineKeyboardButton(text="⾕", callback_data="start"),
-                    InlineKeyboardButton(text="♡", url=GRP_LNK),
-                    InlineKeyboardButton(text="𖤍", callback_data="about"),
-                    InlineKeyboardButton(text="$", callback_data="topsearch"),
-                    InlineKeyboardButton(text="☰", url=CHNL_LNK),
-                ],[
-                    InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('+ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ +', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('• ᴛᴏᴘ •', callback_data="topsearch"),
-                    InlineKeyboardButton('$ Eᴀʀɴ Mᴏɴᴇʏ', callback_data="earn")
+                    InlineKeyboardButton('• ᴜᴘɢʀᴀᴅᴇ •', callback_data="premium"),
                 ],[
-                    InlineKeyboardButton('〄 Hᴇʟᴘ', callback_data='features'),
-                    InlineKeyboardButton('⍟ Aʙᴏᴜᴛ', callback_data='bot')
+                    InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='features'),
+                    InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='bot')
                 ],[
-                    InlineKeyboardButton('✇ Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
+                    InlineKeyboardButton('• ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ •', callback_data="earn")
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1749,9 +1743,9 @@ async def auto_filter(client, msg, spoll=False):
                 cap += f"\n\n<b>{file_num}. <a href='https://telegram.me/{temp.U_NAME}?start=file_{message.chat.id}_{file.file_id}'>{get_size(file.file_size)} | {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}</a></b>"
     else:
         if settings.get('button'):
-            cap =f"<b><blockquote>👋Hᴇʏ,{message.from_user.mention}</blockquote>\n\n📂 Hᴇʀᴇ I Fᴏᴜɴᴅ Fᴏʀ Yᴏᴜʀ Sᴇᴀʀᴄʜ <code>{search}</code></b>\n\n"
+            cap =f"<b><blockquote>Hello,{message.from_user.mention}</blockquote>\n\n📂 Hᴇʀᴇ I Fᴏᴜɴᴅ Fᴏʀ Yᴏᴜʀ Sᴇᴀʀᴄʜ <code>{search}</code>\nRequested by : {message.from_user.mention}</b>\n\n"
         else:
-            cap =f"<b><blockquote>👋Hᴇʏ,{message.from_user.mention}</blockquote>\n\n📂 Hᴇʀᴇ I Fᴏᴜɴᴅ Fᴏʀ Yᴏᴜʀ Sᴇᴀʀᴄʜ <code>{search}</code></b>\n\n"            
+            cap =f"<b><blockquote>👋Hᴇʏ,{message.from_user.mention}</blockquote>\n\n📂 Hᴇʀᴇ I Fᴏᴜɴᴅ Fᴏʀ Yᴏᴜʀ Sᴇᴀʀᴄʜ <code>{search}</code>\nRequested by : {message.from_user.mention}</b>\n\n"            
             for file_num, file in enumerate(files, start=1):
                 cap += f"<b>{file_num}. <a href='https://telegram.me/{temp.U_NAME}?start=file_{message.chat.id}_{file.file_id}'>{get_size(file.file_size)} | {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"                
     if imdb and imdb.get('poster'):
@@ -1769,7 +1763,7 @@ async def auto_filter(client, msg, spoll=False):
                 await message.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
-            poster = pic.replace('.jpg', "._V1_UX360.jpg") 
+            poster = pic.replace('.jpg', "https://www.imghippo.com/i/Zsv2492QtY.jpg") 
             hmm = await m.edit_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
             try:
                if settings['auto_delete']:
