@@ -1763,7 +1763,7 @@ async def auto_filter(client, msg, spoll=False):
                 await message.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
-            poster = pic.replace('.jpg', "https://www.imghippo.com/i/Zsv2492QtY.jpg") 
+            poster = pic.replace("https://www.imghippo.com/i/Zsv2492QtY.jpg") 
             hmm = await m.edit_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn), parse_mode=enums.ParseMode.HTML)
             try:
                if settings['auto_delete']:
