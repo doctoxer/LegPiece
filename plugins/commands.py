@@ -76,8 +76,8 @@ async def start(client, message):
         await dlt.delete()
         return         
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        silenxbotz=await message.reply_sticker("CAACAgEAAxkBAAENpaZnl898tVVOj-69IH89gx-8ee-CCAACWwIAAu8vQEXX2jgCrI2F-jYE")
-        await asyncio.sleep(5)
+        silenxbotz=await message.reply_sticker("CAACAgUAAxkBAAEObMloGpqvX_mPemQtaCds3A7u-OZ2LAAC1RcAAn8t0FQumAABAirUAAHbNgQ")
+        await asyncio.sleep(30)
         await silenxbotz.delete()
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
