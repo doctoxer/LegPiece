@@ -7,7 +7,7 @@ import random
 import asyncio
 import time
 import pytz
-from MoviePalace.pm_filter import auto_filter 
+from plugins.pm_filter import auto_filter 
 from Script import script
 from datetime import datetime
 from database.refer import referdb
