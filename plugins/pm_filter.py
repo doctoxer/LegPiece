@@ -31,7 +31,7 @@ from database.gfilters_mdb import (
 )
 import logging
 from urllib.parse import quote_plus
-from MoviePalace.util.file_properties import get_name, get_hash, get_media_file_size
+from Lucia.util.file_properties import get_name, get_hash, get_media_file_size
 from database.topdb import silentdb
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
@@ -1270,12 +1270,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('+ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ +', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('• ᴛᴏᴘ •', callback_data="topsearch"),
-                    InlineKeyboardButton('• ᴜᴘɢʀᴀᴅᴇ •', callback_data="premium"),
+                    InlineKeyboardButton('• ɢʀᴏᴜᴘ •', url=GRP_LNK),
                 ],[
                     InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='features'),
                     InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='bot')
                 ],[
-                    InlineKeyboardButton('• ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ •', callback_data="earn")
+                    InlineKeyboardButton('• ɴᴇᴡ ᴍᴏᴠɪᴇꜱ •', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
