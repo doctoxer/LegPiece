@@ -1278,11 +1278,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('• ɴᴇᴡ ᴍᴏᴠɪᴇꜱ •', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        with open("MoviePalace/Bot/photo_2025-04-30_00-49-18.jpg", "rb") as image:
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            media=InputMediaPhoto(image)
+            InputMediaPhoto(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
